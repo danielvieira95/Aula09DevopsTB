@@ -8,14 +8,14 @@ on:
   # Executa quando for criado ou atualizado
   # um Pull Request para a master
   pull_request:
-    branches:
-      - 
+    
+       
 
   # Executa quando houver push na master
   # incluindo um merge
   push:
-    branches:
-      - 
+    
+       
 
 
 jobs:
