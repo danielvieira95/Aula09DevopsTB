@@ -9,13 +9,13 @@ on:
   # um Pull Request para a master
   pull_request:
     branches:
-      - master
+      - 
 
   # Executa quando houver push na master
   # incluindo um merge
   push:
     branches:
-      - master
+      - 
 
 
 jobs:
