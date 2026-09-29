@@ -1,15 +1,17 @@
 name: Testes Java
 
-# Define quando o workflow será executado
 on:
 
+  # Permite executar manualmente pela aba Actions
+  workflow_dispatch:
+
   # Executa quando for criado ou atualizado
-  # um Pull Request para a main
+  # um Pull Request para a master
   pull_request:
     branches:
       - master
 
-  # Executa novamente quando algo entrar na master
+  # Executa quando houver push na master
   # incluindo um merge
   push:
     branches:
@@ -26,8 +28,8 @@ jobs:
     steps:
 
       # Baixa o código do repositório
-      - name: Baixar código
-        uses: actions/checkout@v6
+      - name: Baixar codigo
+        uses: actions/checkout@v4
 
       # Instala/configura o Java
       - name: Configurar Java
