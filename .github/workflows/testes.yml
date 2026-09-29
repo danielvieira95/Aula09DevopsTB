@@ -1,0 +1,42 @@
+name: Testes Java
+
+# Define quando o workflow será executado
+on:
+
+  # Executa quando for criado ou atualizado
+  # um Pull Request para a main
+  pull_request:
+    branches:
+      - master
+
+  # Executa novamente quando algo entrar na master
+  # incluindo um merge
+  push:
+    branches:
+      - master
+
+
+jobs:
+
+  testes:
+
+    # Máquina virtual fornecida pelo GitHub
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Baixa o código do repositório
+      - name: Baixar código
+        uses: actions/checkout@v6
+
+      # Instala/configura o Java
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'maven'
+
+      # Executa os testes unitários
+      - name: Executar testes
+        run: mvn test
