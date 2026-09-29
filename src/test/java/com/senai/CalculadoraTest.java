@@ -10,7 +10,7 @@ public class CalculadoraTest {
         Calculadora calculadora = new Calculadora();
         int resultado = calculadora.somar(3, 2);
         // metodo assertEquals compara o resultado que esperamos com o resultado real
-        assertEquals(4, resultado);
+        assertEquals(5, resultado);
        
     }
 
